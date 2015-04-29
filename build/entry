@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+if [ ! -f /tmp/initialized ];then
+    echo "root:docker" | chpasswd
+    touch /tmp/initialized
+fi
+/etc/init.d/ssh start
